@@ -33,15 +33,14 @@ function renderTransactions() {
   transactions.forEach((transaction) => {
     // Crear elemento de lista
     const listItem = document.createElement("li");
-    listItem.className = "list-group-item d-flex justify-content-between align-items-center";
+    listItem.className = "transaction-item";
 
-    // Aplicar estilo según el tipo de transacción
-    const textColor = transaction.type === "income" ? "text-success" : "text-danger";
-
-    // Contenido del elemento
+    // Contenido del elemento con estructura alineada
     listItem.innerHTML = `
-      <span>${transaction.date}</span>
-      <span class="${textColor} fw-bold">${transaction.type === "income" ? "+" : "-"}$${transaction.amount.toFixed(2)}</span>
+      <span class="transaction-date">${transaction.date}</span>
+      <span class="transaction-type ${
+        transaction.type === "income" ? "income" : "expense"
+      }">${transaction.type === "income" ? "+" : "-"}$${transaction.amount.toFixed(2)}</span>
     `;
 
     transactionList.appendChild(listItem);

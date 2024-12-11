@@ -1,0 +1,149 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --font-family: Arial, sans-serif;
+    --color-primary: #2c3e50;
+    --color-secondary: #2980b9;
+    --color-green: #27ae60;
+    --color-white: #ffffff;
+    --color-light-gray: #f8f9fa;
+    --color-dark-gray: #6c757d;
+    --border-radius: 8px;
+    --padding: 16px;
+    --margin: 16px;
+    --font-size-large: 24px;
+    --font-size-medium: 18px;
+    --font-size-small: 14px;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-light-gray);
+    color: var(--color-primary);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--padding);
+}
+
+.text-center {
+    text-align: center;
+    font-size: var(--font-size-large);
+    margin-bottom: var(--margin);
+}
+
+.card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--margin);
+}
+
+.card-body {
+    padding: var(--padding);
+}
+
+.card-title {
+    font-size: var(--font-size-medium);
+    margin-bottom: var(--margin);
+}
+
+.form-group {
+    margin-bottom: var(--margin);
+}
+
+label {
+    display: block;
+    font-size: var(--font-size-small);
+    margin-bottom: 8px;
+}
+
+input, select {
+    width: 100%;
+    padding: var(--padding);
+    font-size: var(--font-size-small);
+    border: 1px solid var(--color-dark-gray);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: var(--padding);
+    font-size: var(--font-size-medium);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    color: var(--color-white);
+}
+
+.btn-green {
+    background-color: var(--color-green);
+}
+
+.btn-green:hover {
+    background-color: #1e8449;
+}
+
+.btn-blue {
+    background-color: var(--color-secondary);
+}
+
+.btn-blue:hover {
+    background-color: #21618c;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo para el historial de transacciones */
+#transaction-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+  color: #333;
+}
+
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.transaction-date {
+  flex: 1; /* Ocupa espacio proporcional */
+  text-align: left;
+}
+
+.transaction-type {
+  flex: 0 0 auto; /* No se expande ni se contrae */
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.transaction-type.income {
+  color: #27ae60;
+}
+
+.transaction-type.expense {
+  color: #c0392b;
+}
