@@ -165,6 +165,27 @@ button:hover {
   color: red;
 }
 
+/* Estilos para balance bajo */
+.low-balance {
+  color: red;
+  font-weight: bold;
+}
+
+/* Estilos para balance regular */
+.regular-balance {
+  color: orange;
+  font-weight: bold;
+}
+
+/* Estilos para balance extra */
+.extra-balance {
+  color: green;
+  font-weight: bold;
+}
+
+
+
+
 /* Footer */
 footer {
   text-align: center;
