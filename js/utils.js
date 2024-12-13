@@ -5,7 +5,7 @@ export const calcularBalance = (transacciones) => {
   }, 0);
 };
 
-// Función pura para formatear un monto en una moneda específica
+// Función pura para formatear un monto en una moneda específica, por
 export const formatearMonto = (monto, moneda = "USD") => {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
