@@ -4,46 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Gestor de presupuesto personal con balance total y transacciones categorizadas en ingresos y gastos.">
+    <meta name="keywords" content="presupuesto, finanzas personales, ingresos, gastos, balance">
+    <meta name="author" content="Tu Nombre">
     <title>Mi Presupuesto Personal</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="text-center">Mi Presupuesto Personal</h1>
+    <header>
+        <h1>Mi Presupuesto Personal</h1>
+    </header>
 
-        <div class="card">
-            <div class="card-body">
-                <h2 class="card-title">Nueva Transacción</h2>
-                <form id="transaction-form">
-                    <div class="form-group">
-                        <label for="amount">Monto ($):</label>
-                        <input type="number" id="amount" placeholder="Ingrese el monto" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="type">Tipo:</label>
-                        <select id="type" required>
-                            <option value="income">Ingreso</option>
-                            <option value="expense">Gasto</option>
-                        </select>
-                    </div>
+    <main>
+        <section id="balance-section" aria-labelledby="balance-title">
+            <h2 id="balance-title">Balance Total</h2>
+            <p id="balance-total" aria-live="polite">$0.00</p>
+        </section>
+
+        <section aria-labelledby="new-transaction-title">
+            <h2 id="new-transaction-title">Nueva Transacción</h2>
+            <form id="transaction-form">
+                <fieldset>
+                    <label for="amount">Monto ($):</label>
+                    <input type="number" id="amount" placeholder="Ingrese el monto" required>
+
+                    <label for="type">Tipo:</label>
+                    <select id="type" required>
+                        <option value="income">Ingreso</option>
+                        <option value="expense">Gasto</option>
+                    </select>
+
                     <button type="submit" class="btn btn-green">Agregar Transacción</button>
-                </form>
-            </div>
-        </div>
+                </fieldset>
+            </form>
+        </section>
 
-        <div class="card">
-            <div class="card-body">
-                <h2 class="card-title">Historial de Transacciones</h2>
-                <button id="sort-button" class="btn btn-blue">Ordenar por Monto</button>
-                <ul id="transaction-list"></ul>
-            </div>
-        </div>
-    </div>
-    
-    <script src="./js/validators.js"></script>
-    <script src="./js/utils.js"></script>
-    <script src="./js/app.js"></script>
+        <section aria-labelledby="transaction-history-title">
+            <h2 id="transaction-history-title">Historial de Transacciones</h2>
+            <button id="sort-button" class="btn btn-blue">Ordenar por Monto</button>
+            <ul id="transaction-list" aria-live="polite"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mi Presupuesto Personal. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="./js/validators.js" type="module"></script>
+    <script src="./js/utils.js" type="module"></script>
+    <script src="./js/app.js" type="module"></script>
 </body>
 
 </html>
