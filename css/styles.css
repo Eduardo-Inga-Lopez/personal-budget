@@ -14,10 +14,12 @@
   --color-primary-hover: #45a049;
   --color-secondary: #2196f3;
   --color-secondary-hover: #1976d2;
+  --color-accent: #ff9800; /* Nuevo color */
   --color-text: #333;
   --color-white: #ffffff;
   --color-light-gray: #f9f9f9;
   --color-border: #ddd;
+  --font-size-extra-large: 2.5rem;
   --font-size-large: 2rem;
   --font-size-medium: 1.5rem;
   --font-size-small: 1rem;
@@ -30,8 +32,6 @@
 body {
   font-family: var(--font-family);
   line-height: var(--line-height);
-  margin: 0;
-  padding: 0;
   background-color: var(--color-background);
   color: var(--color-text);
 }
@@ -41,19 +41,21 @@ header {
   color: var(--color-white);
   padding: var(--padding) 0;
   text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-  margin: 0;
-  font-size: calc(var(--font-size-large) + 0.5rem);
+  font-size: var(--font-size-extra-large);
 }
 
+/* Main Container */
 main {
   max-width: 800px;
   margin: var(--padding) auto;
   padding: 10px;
 }
 
+/* Section Cards */
 section {
   background-color: var(--color-white);
   border-radius: var(--border-radius);
@@ -87,10 +89,9 @@ form {
   display: flex;
   flex-direction: column;
   gap: var(--gap);
-}
-
-label {
-  font-weight: bold;
+  padding: calc(var(--padding) / 2);
+  background-color: #fefefe;
+  border-radius: var(--border-radius);
 }
 
 input,
@@ -112,8 +113,13 @@ button {
   text-align: center;
 }
 
+button:hover {
+  opacity: 0.9;
+}
+
 .btn-green {
-  margin-top: 20px;
+  margin-top: 20px; /* Asegurar un margen superior adecuado */
+  margin-bottom: 10px; /* Añadir un margen inferior */
   width: 100%;
   background-color: var(--color-primary);
 }
@@ -123,9 +129,10 @@ button {
 }
 
 .btn-blue {
-  background-color: var(--color-secondary);
-  margin-bottom: 20px;
+  margin-top: 10px; /* Añadir un margen superior */
+  margin-bottom: 20px; /* Mantener un margen inferior adecuado */
   width: 100%;
+  background-color: var(--color-secondary);
 }
 
 .btn-blue:hover {
@@ -147,6 +154,11 @@ button {
   margin-bottom: calc(var(--padding) / 4);
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+#transaction-list li:nth-child(odd) {
+  background-color: #efefef; /* Alterna colores */
 }
 
 .expense {
@@ -160,4 +172,6 @@ footer {
   background-color: var(--color-text);
   color: var(--color-white);
   margin-top: var(--padding);
+  font-size: var(--font-size-small);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
